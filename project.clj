@@ -1,4 +1,4 @@
-(defproject net.clojars.macielti/porteiro-component "0.1.0"
+(defproject net.clojars.macielti/porteiro-component "0.1.1"
 
   :description "Porteiro Component"
 
@@ -7,15 +7,15 @@
   :license {:name "EPL-2.0 OR GPL-2.0-or-later WITH Classpath-exception-2.0"
             :url  "https://www.eclipse.org/legal/epl-2.0/"}
 
-  :dependencies [[org.clojure/clojure "1.11.1"]
+  :dependencies [[org.clojure/clojure "1.12.0"]
                  [prismatic/schema "1.4.1"]
-                 [buddy/buddy-hashers "1.8.158"]
+                 [buddy/buddy-hashers "2.0.167"]
                  [dev.weavejester/medley "1.8.1"]
                  [camel-snake-kebab "0.4.3"]
                  [com.github.igrishaev/pg2-core "0.1.19"]
                  [buddy/buddy-sign "3.6.1-359"]
                  [clojure.java-time "1.4.2"]
-                 [net.clojars.macielti/common-clj "33.70.70"]]
+                 [net.clojars.macielti/common-clj "34.70.70"]]
 
   :profiles {:dev {:resource-paths ^:replace ["test/resources"]
 
