@@ -1,11 +1,11 @@
 (ns porteiro-component.adapters.customers
-  (:require [schema.core :as s]
-            [buddy.hashers :as hashers]
-            [medley.core :as medley]
+  (:require [buddy.hashers :as hashers]
             [camel-snake-kebab.core :as camel-snake-kebab]
+            [medley.core :as medley]
             [porteiro-component.models.customer :as models.customer]
             [porteiro-component.wire.in.customer :as wire.in.customer]
-            [porteiro-component.wire.out.customer :as wire.out.customer]))
+            [porteiro-component.wire.out.customer :as wire.out.customer]
+            [schema.core :as s]))
 
 (s/defn wire->internal :- models.customer/Customer
   [{:keys [username password name]} :- wire.in.customer/Customer]

@@ -1,9 +1,9 @@
 (ns porteiro-component.diplomat.http-server
-  (:require [common-clj.io.interceptors.customer :as io.interceptors.customer]
-            [porteiro-component.interceptors :as interceptors]
+  (:require [common-clj.io.interceptors :as io.interceptors]
+            [common-clj.io.interceptors.customer :as io.interceptors.customer]
             [porteiro-component.diplomat.http-server.customer :as diplomat.http-server.customer]
-            [porteiro-component.wire.in.customer :as wire.in.customer]
-            [common-clj.io.interceptors :as io.interceptors]))
+            [porteiro-component.interceptors :as interceptors]
+            [porteiro-component.wire.in.customer :as wire.in.customer]))
 
 (def routes
   [["/api/customers" :post [(io.interceptors/schema-body-in-interceptor wire.in.customer/CustomerCreationDocument)

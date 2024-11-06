@@ -1,7 +1,7 @@
 (ns porteiro-component.db.postgresql.customer
   (:require [pg.core :as pg]
-            [porteiro-component.models.customer :as models.customer]
             [porteiro-component.adapters.customers :as adapters.customer]
+            [porteiro-component.models.customer :as models.customer]
             [schema.core :as s]))
 
 (s/defn insert! :- models.customer/Customer

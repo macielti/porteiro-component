@@ -1,13 +1,13 @@
 (ns porteiro-component.controllers.customer
   (:require [buddy.hashers :as hashers]
-            [porteiro-component.adapters.customers :as adapters.customer]
-            [porteiro-component.models.customer :as models.customer]
             [buddy.sign.jwt :as jwt]
-            [java-time.api :as jt]
-            [porteiro-component.db.postgresql.customer :as postgresql.customer]
             [common-clj.error.core :as common-error]
-            [schema.core :as s]
-            [pg.pool :as pool]))
+            [java-time.api :as jt]
+            [pg.pool :as pool]
+            [porteiro-component.adapters.customers :as adapters.customer]
+            [porteiro-component.db.postgresql.customer :as postgresql.customer]
+            [porteiro-component.models.customer :as models.customer]
+            [schema.core :as s]))
 
 (s/defn create-customer! :- models.customer/Customer
   [customer :- models.customer/Customer

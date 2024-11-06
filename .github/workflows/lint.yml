@@ -1,0 +1,13 @@
+name: Clojure CI - Linter
+
+on: [ push ]
+
+jobs:
+  linter-check:
+    name: Linter Check
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Linter Check
+        run: lein lint
