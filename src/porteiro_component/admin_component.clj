@@ -1,9 +1,9 @@
 (ns porteiro-component.admin-component
-  (:require [integrant.core :as ig]
+  (:require [clojure.tools.logging :as log]
+            [integrant.core :as ig]
             [pg.pool :as pool]
             [porteiro-component.db.postgresql.customer :as postgresql.customer]
-            [porteiro-component.diplomat.http-server.customer :as diplomat.http-server.customer]
-            [taoensso.timbre :as log]))
+            [porteiro-component.diplomat.http-server.customer :as diplomat.http-server.customer]))
 
 (defmethod ig/init-key ::admin
   [_ {:keys [components]}]

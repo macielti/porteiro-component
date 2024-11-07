@@ -1,0 +1,5 @@
+{:host     "127.0.0.1"
+ :port     10150
+ :user     "test"
+ :password "random-password"
+ :database "test"}

@@ -5,6 +5,12 @@ of [keepachangelog.com](http://keepachangelog.com/).
 
 ## Unreleased
 
+## 0.2.1 - 2024-11-07
+
+### Added
+
+- Use clojure.tools.logging.
+
 ## 0.1.1 - 2024-11-05
 
 ### Added

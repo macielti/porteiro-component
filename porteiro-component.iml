@@ -2,7 +2,7 @@
 <module type="JAVA_MODULE" version="4">
   <component name="BuildSystem">
     <option name="buildSystemId" value="LEININGEN" />
-    <option name="displayName" value="net.clojars.macielti/porteiro-component:0.1.1" />
+    <option name="displayName" value="net.clojars.macielti/porteiro-component:0.2.1" />
   </component>
   <component name="NewModuleRootManager">
     <output url="file://$MODULE_DIR$/target/classes" />
@@ -25,6 +25,8 @@
     <orderEntry type="library" name="Leiningen: buddy/buddy-hashers:2.0.167" level="project" />
     <orderEntry type="library" name="Leiningen: buddy/buddy-sign:3.6.1-359" level="project" />
     <orderEntry type="library" name="Leiningen: camel-snake-kebab:0.4.3" level="project" />
+    <orderEntry type="library" name="Leiningen: ch.qos.logback/logback-classic:1.5.12" level="project" />
+    <orderEntry type="library" name="Leiningen: ch.qos.logback/logback-core:1.5.12" level="project" />
     <orderEntry type="library" name="Leiningen: cheshire:5.13.0" level="project" />
     <orderEntry type="library" name="Leiningen: clj-commons/iapetos:0.1.14" level="project" />
     <orderEntry type="library" name="Leiningen: clj-http:3.9.1" level="project" />
@@ -420,7 +422,7 @@
     <orderEntry type="library" name="Leiningen: mvxcvi/arrangement:2.1.0" level="project" />
     <orderEntry type="library" name="Leiningen: mvxcvi/puget:1.3.4" level="project" />
     <orderEntry type="library" name="Leiningen: net.cgrand/macrovich:0.2.1" level="project" />
-    <orderEntry type="library" name="Leiningen: net.clojars.macielti/common-clj:34.70.70" level="project" />
+    <orderEntry type="library" name="Leiningen: net.clojars.macielti/common-clj:35.71.70" level="project" />
     <orderEntry type="library" name="Leiningen: net.clojars.macielti/common-test-clj:1.0.0" level="project" />
     <orderEntry type="library" name="Leiningen: net.java.dev.jna/jna:5.13.0" level="project" />
     <orderEntry type="library" name="Leiningen: nrepl:1.0.0" level="project" />
@@ -456,7 +458,7 @@
     <orderEntry type="library" name="Leiningen: org.clojure/tools.analyzer.jvm:0.7.0" level="project" />
     <orderEntry type="library" name="Leiningen: org.clojure/tools.analyzer:0.6.9" level="project" />
     <orderEntry type="library" name="Leiningen: org.clojure/tools.cli:1.1.230" level="project" />
-    <orderEntry type="library" name="Leiningen: org.clojure/tools.logging:0.4.1" level="project" />
+    <orderEntry type="library" name="Leiningen: org.clojure/tools.logging:1.3.0" level="project" />
     <orderEntry type="library" name="Leiningen: org.clojure/tools.macro:0.1.5" level="project" />
     <orderEntry type="library" name="Leiningen: org.clojure/tools.reader:1.4.1" level="project" />
     <orderEntry type="library" name="Leiningen: org.eclipse.jetty.http2/http2-common:11.0.20" level="project" />
@@ -499,7 +501,7 @@
     <orderEntry type="library" name="Leiningen: org.ring-clojure/ring-core-protocols:1.12.0" level="project" />
     <orderEntry type="library" name="Leiningen: org.ring-clojure/ring-websocket-protocols:1.12.0" level="project" />
     <orderEntry type="library" name="Leiningen: org.rnorth.duct-tape/duct-tape:1.0.8" level="project" />
-    <orderEntry type="library" name="Leiningen: org.slf4j/slf4j-api:2.0.12" level="project" />
+    <orderEntry type="library" name="Leiningen: org.slf4j/slf4j-api:2.0.16" level="project" />
     <orderEntry type="library" name="Leiningen: org.testcontainers/database-commons:1.20.1" level="project" />
     <orderEntry type="library" name="Leiningen: org.testcontainers/jdbc:1.20.1" level="project" />
     <orderEntry type="library" name="Leiningen: org.testcontainers/postgresql:1.20.1" level="project" />

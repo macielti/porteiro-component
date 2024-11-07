@@ -1,6 +1,18 @@
 # Porteiro Component
 
-#TDB
+TBD
+
+## Usage
+
+### Migrations
+
+The migrations files are located in the `resources/migrations` directory.
+
+The migration configuration file is located in the `resources/migration.config.example.edn` file.
+
+To run the migrations, use the following command:
+
+```lein run -m pg.migration.cli -c resources/migration.config.example.edn migrate --all```
 
 ## License
 
