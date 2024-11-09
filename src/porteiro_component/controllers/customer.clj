@@ -1,13 +1,13 @@
 (ns porteiro-component.controllers.customer
   (:require [buddy.hashers :as hashers]
             [buddy.sign.jwt :as jwt]
-            [common-clj.error.core :as common-error]
             [java-time.api :as jt]
             [pg.pool :as pool]
             [porteiro-component.adapters.customers :as adapters.customer]
             [porteiro-component.db.postgresql.customer :as postgresql.customer]
             [porteiro-component.models.customer :as models.customer]
-            [schema.core :as s]))
+            [schema.core :as s]
+            [service-component.error :as common-error]))
 
 (s/defn create-customer! :- models.customer/Customer
   [customer :- models.customer/Customer
@@ -43,6 +43,4 @@
   (pool/with-connection [conn postgresql]
     (if (postgresql.customer/lookup customer-id conn)
       (postgresql.customer/add-role! customer-id role conn)
-      (throw (ex-info "Customer not found"
-                      {:status 404
-                       :cause  "Customer not found"})))))
+      (common-error/http-friendly-exception 404 "customer-not-found" "" ""))))

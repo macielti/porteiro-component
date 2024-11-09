@@ -1,4 +1,4 @@
-(defproject net.clojars.macielti/porteiro-component "0.2.1"
+(defproject net.clojars.macielti/porteiro-component "0.3.1"
 
   :description "Porteiro Component"
 
@@ -12,11 +12,12 @@
                  [buddy/buddy-hashers "2.0.167"]
                  [dev.weavejester/medley "1.8.1"]
                  [camel-snake-kebab "0.4.3"]
-                 [com.github.igrishaev/pg2-core "0.1.19"]
+                 [com.github.igrishaev/pg2-core "0.1.20"]
                  [buddy/buddy-sign "3.6.1-359"]
                  [clojure.java-time "1.4.2"]
                  [org.clojure/tools.logging "1.3.0"]
-                 [net.clojars.macielti/common-clj "35.71.70"]]
+                 [net.clojars.macielti/service-component "1.3.0"]
+                 [net.clojars.macielti/common-clj "37.71.70"]]
 
   :profiles {:dev {:resource-paths ^:replace ["test/resources"]
 
@@ -26,8 +27,8 @@
                                     [com.github.liquidz/antq "RELEASE"]
                                     [lein-cloverage "1.2.4"]]
 
-                   :dependencies   [[net.clojars.macielti/common-test-clj "1.0.0"]
-                                    [com.github.igrishaev/pg2-migration "0.1.18"]
+                   :dependencies   [[net.clojars.macielti/common-test-clj "1.1.0"]
+                                    [com.github.igrishaev/pg2-migration "0.1.20"]
                                     [nubank/matcher-combinators "3.9.1"]
                                     [org.slf4j/slf4j-api "2.0.16"]
                                     [ch.qos.logback/logback-classic "1.5.12"]
