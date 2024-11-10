@@ -14,3 +14,4 @@ pom.xml.asc
 /.idea/
 /.clj-kondo/.cache/
 /.lsp/.cache/
+porteiro-component.iml
