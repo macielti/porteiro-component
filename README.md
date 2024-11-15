@@ -1,3 +1,5 @@
+![Compatible with GraalVM](https://img.shields.io/badge/compatible_with-GraalVM-green)
+
 # Porteiro Component
 
 TBD
