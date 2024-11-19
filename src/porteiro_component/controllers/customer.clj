@@ -2,18 +2,18 @@
   (:require [buddy.hashers :as hashers]
             [buddy.sign.jwt :as jwt]
             [java-time.api :as jt]
-            [pg.pool :as pool]
             [porteiro-component.adapters.customers :as adapters.customer]
-            [porteiro-component.db.postgresql.customer :as postgresql.customer]
+            [porteiro-component.db.customer :as database.customer]
+            [porteiro-component.db.postgresql.customer]
+            [porteiro-component.db.sqlite.customer]
             [porteiro-component.models.customer :as models.customer]
             [schema.core :as s]
             [service-component.error :as common-error]))
 
 (s/defn create-customer! :- models.customer/Customer
   [customer :- models.customer/Customer
-   postgresql]
-  (pool/with-connection [conn postgresql]
-    (postgresql.customer/insert! customer conn)))
+   database]
+  (database.customer/insert! customer database))
 
 (s/defn ->token :- s/Str
   [map :- {s/Keyword s/Any}
@@ -25,9 +25,8 @@
 (s/defn authenticate-customer! :- s/Str
   [{:keys [username password]} :- models.customer/CustomerAuthentication
    {:keys [jwt-secret]}
-   postgresql]
-  (let [{:customer/keys [hashed-password] :as customer} (pool/with-connection [conn postgresql]
-                                                          (postgresql.customer/by-username username conn))]
+   database]
+  (let [{:customer/keys [hashed-password] :as customer} (database.customer/by-username username database)]
     (if (and customer (:valid (hashers/verify password hashed-password)))
       (-> {:customer (adapters.customer/internal->wire customer)}
           (->token jwt-secret))
@@ -39,8 +38,7 @@
 (s/defn add-role!
   [customer-id :- s/Uuid
    role :- s/Keyword
-   postgresql]
-  (pool/with-connection [conn postgresql]
-    (if (postgresql.customer/lookup customer-id conn)
-      (postgresql.customer/add-role! customer-id role conn)
-      (common-error/http-friendly-exception 404 "customer-not-found" "" ""))))
+   database]
+  (if (database.customer/lookup customer-id database)
+    (database.customer/add-role! customer-id role database)
+    (common-error/http-friendly-exception 404 "customer-not-found" "" "")))
