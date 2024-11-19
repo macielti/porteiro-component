@@ -1,4 +1,4 @@
-(defproject net.clojars.macielti/porteiro-component "0.3.1"
+(defproject net.clojars.macielti/porteiro-component "0.4.1"
 
   :description "Porteiro Component"
 

@@ -5,6 +5,12 @@ of [keepachangelog.com](http://keepachangelog.com/).
 
 ## Unreleased
 
+## 0.4.1 - 2024-11-19
+
+### Added
+
+- Added integration with sqlite.
+
 ## 0.3.1 - 2024-11-09
 
 ### Fixed
