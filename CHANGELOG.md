@@ -5,6 +5,12 @@ of [keepachangelog.com](http://keepachangelog.com/).
 
 ## Unreleased
 
+## 0.4.2 - 2024-11-20
+
+### Added
+
+- Bump dependencies in order to make it compatible with GraalVM.
+
 ## 0.4.1 - 2024-11-19
 
 ### Added
