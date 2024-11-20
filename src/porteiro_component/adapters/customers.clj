@@ -3,9 +3,11 @@
             [camel-snake-kebab.core :as camel-snake-kebab]
             [medley.core :as medley]
             [porteiro-component.models.customer :as models.customer]
+            [porteiro-component.models.role :as models.role]
             [porteiro-component.wire.in.customer :as wire.in.customer]
             [porteiro-component.wire.out.customer :as wire.out.customer]
-            [schema.core :as s]))
+            [schema.core :as s])
+  (:import (java.util UUID)))
 
 (s/defn wire->internal :- models.customer/Customer
   [{:keys [username password name]} :- wire.in.customer/Customer]
@@ -44,4 +46,13 @@
                       :customer/username        username
                       :customer/hashed-password hashed_password
                       :customer/roles           (map wire->internal-role roles)}
+                     :customer/name name))
+
+(s/defn sqlite->internal :- models.customer/Customer
+  [{:customers/keys [id username name hashed_password]}
+   roles :- [models.role/Role]]
+  (medley/assoc-some {:customer/id              (UUID/fromString id)
+                      :customer/username        username
+                      :customer/hashed-password hashed_password
+                      :customer/roles           (map :role/role roles)}
                      :customer/name name))

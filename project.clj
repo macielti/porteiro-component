@@ -1,4 +1,4 @@
-(defproject net.clojars.macielti/porteiro-component "0.3.1"
+(defproject net.clojars.macielti/porteiro-component "0.4.1"
 
   :description "Porteiro Component"
 
@@ -12,27 +12,34 @@
                  [buddy/buddy-hashers "2.0.167"]
                  [dev.weavejester/medley "1.8.1"]
                  [camel-snake-kebab "0.4.3"]
-                 [com.github.igrishaev/pg2-core "0.1.20"]
+                 [com.github.igrishaev/pg2-core "0.1.21"]
                  [buddy/buddy-sign "3.6.1-359"]
-                 [clojure.java-time "1.4.2"]
+                 [clojure.java-time "1.4.3"]
                  [org.clojure/tools.logging "1.3.0"]
-                 [net.clojars.macielti/service-component "1.3.0"]
-                 [net.clojars.macielti/common-clj "37.71.70"]]
+                 [net.clojars.macielti/service-component "2.4.2"]
+                 [net.clojars.macielti/common-clj "41.72.72"]
+
+                 [org.xerial/sqlite-jdbc "3.40.0.0"]
+                 [seancorfield/next.jdbc "1.2.659"]]
 
   :profiles {:dev {:resource-paths ^:replace ["test/resources"]
 
                    :test-paths     ^:replace ["test/unit" "test/integration" "test/helpers"]
 
-                   :plugins        [[com.github.clojure-lsp/lein-clojure-lsp "1.4.13"]
+                   :plugins        [[com.github.clojure-lsp/lein-clojure-lsp "1.4.15"]
                                     [com.github.liquidz/antq "RELEASE"]
+                                    [migratus-lein "0.7.3"]
                                     [lein-cloverage "1.2.4"]]
 
-                   :dependencies   [[net.clojars.macielti/common-test-clj "1.1.0"]
-                                    [com.github.igrishaev/pg2-migration "0.1.20"]
+                   :dependencies   [[net.clojars.macielti/common-test-clj "2.1.1"]
+                                    [migratus "1.6.3"]
+                                    [danlentz/clj-uuid "0.1.9"]
                                     [nubank/matcher-combinators "3.9.1"]
-                                    [org.slf4j/slf4j-api "2.0.16"]
-                                    [ch.qos.logback/logback-classic "1.5.12"]
+                                    [cheshire "5.13.0"]
                                     [hashp "0.2.2"]]
+
+                   :migratus       {:store         :database
+                                    :migration-dir "migrations-sqlite"}
 
                    :injections     [(require 'hashp.core)]
 
