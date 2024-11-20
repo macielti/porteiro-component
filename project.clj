@@ -31,7 +31,7 @@
                                     [migratus-lein "0.7.3"]
                                     [lein-cloverage "1.2.4"]]
 
-                   :dependencies   [[net.clojars.macielti/common-test-clj "1.1.1-3"]
+                   :dependencies   [[net.clojars.macielti/common-test-clj "2.1.1"]
                                     [migratus "1.6.3"]
                                     [danlentz/clj-uuid "0.1.9"]
                                     [nubank/matcher-combinators "3.9.1"]
