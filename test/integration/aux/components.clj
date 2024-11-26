@@ -8,10 +8,13 @@
             [porteiro-component.diplomat.http-server :as porteiro.diplomat.http-server]
             [service-component.core :as component.service]))
 
+(def schemas ["CREATE TABLE customers (id TEXT PRIMARY KEY, username TEXT NOT NULL, name TEXT, hashed_password TEXT NOT NULL);"
+              "CREATE TABLE roles (id TEXT PRIMARY KEY, customer_id TEXT NOT NULL, role TEXT NOT NULL);"])
+
 (def components-system-sqlite
   {::component.config/config           {:path "test/resources/config.example.edn"
                                         :env  :test}
-   ::component.sqlite-mock/sqlite-mock {}
+   ::component.sqlite-mock/sqlite-mock {:schemas schemas}
    ::component.admin/admin             {:components {:config (ig/ref ::component.config/config)
                                                      :sqlite (ig/ref ::component.sqlite-mock/sqlite-mock)}}
    ::component.routes/routes           {:routes porteiro.diplomat.http-server/routes}

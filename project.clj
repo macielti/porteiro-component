@@ -1,4 +1,4 @@
-(defproject net.clojars.macielti/porteiro-component "0.4.2"
+(defproject net.clojars.macielti/porteiro-component "0.5.2"
 
   :description "Porteiro Component"
 
@@ -17,7 +17,7 @@
                  [clojure.java-time "1.4.3"]
                  [org.clojure/tools.logging "1.3.0"]
                  [net.clojars.macielti/service-component "2.4.2"]
-                 [net.clojars.macielti/common-clj "41.72.72"]
+                 [net.clojars.macielti/common-clj "41.74.73"]
 
                  [org.xerial/sqlite-jdbc "3.41.2.1"]
                  [com.github.seancorfield/next.jdbc "1.3.955"]]
@@ -31,9 +31,9 @@
                                     [migratus-lein "0.7.3"]
                                     [lein-cloverage "1.2.4"]]
 
-                   :dependencies   [[net.clojars.macielti/common-test-clj "2.1.1"]
+                   :dependencies   [[net.clojars.macielti/common-test-clj "4.2.3"]
                                     [migratus "1.6.3"]
-                                    [danlentz/clj-uuid "0.1.9"]
+                                    [danlentz/clj-uuid "0.2.0"]
                                     [nubank/matcher-combinators "3.9.1"]
                                     [cheshire "5.13.0"]
                                     [hashp "0.2.2"]]
